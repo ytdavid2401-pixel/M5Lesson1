@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>
+         My Game Profile
+      </title>
+   </head>
+   <body>
+      <h1>
+         My Game Profile
+      </h1>
+      <button onclick="showprofile()">
+         Show Profile
+      </button>
+      <div> Name: <span id="Name"></span></div>
+      <div> Score:<span id="Score"></span></div>
+      <div> Topscore:<span id="record"></span></div>
+      <div> Rank:<span id="Rank"></span></div>
+      <div> Greeting:<span id="greeting"></span></div>
+      <div> Stars:<span id="Stars"></span></div>
+      <div> Bonus:<span id="Bonus"></span></div>
+      <div> Teamname:<span id="Team"></span></div>
+
+      <script>
+         function showprofile(){
+            let Name="David";
+            let myScore=75;
+            let Highscore=100;
+            let Bonus=null;
+            let Team;
+
+
+            let IsTopScore=myScore==Highscore;
+            let Rank;
+
+            if (myScore>=80){
+               Rank="Gold";
+            }
+            else if (myScore>=50){
+               Rank="Silber";
+            }
+            else {
+               Rank="Bronze";
+            }
+
+
+            let hour = new Date().getHours();
+
+let greeting;
+
+if (hour < 12) {
+
+greeting = "Good Morning!";
+
+} else if (hour < 17) {
+
+greeting = "Good Afternoon!";
+
+} else {
+
+greeting = "Good Evening!";
+
+}
+
+// While Loop — Stars
+
+let stars = "";
+
+let count = 0;
+
+while (count < 5) {
+
+stars = stars + "* ";
+
+count = count + 1;
+
+}
+
+
+document.getElementById("Name").innerHTML= Name;
+document.getElementById("Score").innerHTML= myScore+" Out of "+Highscore;
+document.getElementById("record").innerHTML= IsTopScore ;
+document.getElementById("Rank").innerHTML= Rank ;
+document.getElementById("Bonus").innerHTML= Bonus;
+document.getElementById("Team").innerHTML= Team ;
+document.getElementById("greeting").innerHTML= greeting;
+document.getElementById("Stars").innerHTML=stars;
+
+         }
+      </script>
+   </body>
+</html>
